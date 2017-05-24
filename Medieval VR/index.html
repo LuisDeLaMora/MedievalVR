@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Luis de la Mora</title>
+     <script src="js/aframe.min.js"></script> 
+</head>
+<body>
+
+<a-scene>
+  <a-assets>
+    <img id="texturaCubo" src="imagen/g.jpg">
+    <img id="TexturaPiso" src="imagen/piso.jpg">
+    <img id="texturaFondo" src="imagen/edadmedia2.jpg">
+    <a-asset-item id="guerrera-obj" src="modelos3d/Guerrera.obj"></a-asset-item>
+    <a-asset-item id="guerrera-mtl" src="modelos3d/Guerrera.mtl"></a-asset-item>
+    <a-asset-item id="quimera-obj" src="modelos3d/quimera.obj"></a-asset-item>
+    <a-asset-item id="quimera-mtl" src="modelos3d/quimera.mtl"></a-asset-item>
+    <a-asset-item id="ogro-obj" src="modelos3d/ogro.obj"></a-asset-item>
+    <a-asset-item id="ogro-mtl" src="modelos3d/ogro.mtl"></a-asset-item>
+   
+      
+  </a-assets>
+  <a-box position="0 2 -5" rotation="0 45 45" scale="2 2 2" src="#texturaCubo">
+    <a-animation attribute="position" direction="alternate" dur="2000" repeat="indefinite"
+      to="0 2.2 -5"></a-animation>
+    <a-animation attribute="rotation" begin="click" dur="2000" to="360 405 45"></a-animation>
+    <a-animation attribute="scale" begin="mouseenter" dur="300" to="2.3 2.3 2.3"></a-animation>
+    <a-animation attribute="scale" begin="mouseleave" dur="300" to="2 2 2"></a-animation>
+  </a-box>
+  <a-sky height="2048" radius="30" src="#texturaFondo" theta-length="90" width="2048"></a-sky>
+  <a-light type="ambient" color="#445451"></a-light>
+  <a-light type="point" intensity="1.5" position="2 4 4"></a-light>
+  <a-plane src="#TexturaPiso" rotation="-90 0 0" height="60" width="60"></a-plane>
+  <a-text value="&iexcl; &#161;Guerrera en A-FRAME " color="#BBB"
+          position="-1.7 0.5 -3" scale="1.5 1.5 1.5"></a-text>
+          
+<!-- Agregar un modelo 3d en formato .obj -->  
+
+  <a-entity obj-model="obj: #guerrera-obj; mtl: #guerrera-mtl"  position="-4.5 0 15" scale=".7 .7 .7" rotation="0 90 0"></a-entity>   
+
+    <a-entity obj-model="obj: #ogro-obj; mtl: #ogro-mtl"  position="-10 0 1" scale=".7 .7 .7" rotation="0 70 0"></a-entity> 
+    
+    <a-entity obj-model="obj: #quimera-obj; mtl: #quimera-mtl"  position="10 0 -3" scale=".4 .4 .4" rotation="0 -40 0"></a-entity> 
+    
+ 
+ 
+
+          
+  <a-camera>
+    <a-cursor color="#FAFAFA"> </a-cursor>
+  </a-camera>
+</a-scene>   
+</body>
+</html>
